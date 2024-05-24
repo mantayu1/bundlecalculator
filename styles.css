@@ -13,7 +13,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     text-align: center;
 }
@@ -24,21 +24,75 @@ h1 {
 }
 
 .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 20px;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 10px;
+    color: white;
 }
 
-input[type="range"] {
+.input-group label {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.input-group input[type="range"] {
     width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    background: #ccc;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border-radius: 5px;
 }
 
-input[type="number"] {
+.input-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #00FF7F;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.input-group input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #00FF7F;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.input-group input[type="number"] {
     width: calc(100% - 24px);
     margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #00FF7F;
 }
 
 .results {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
 }
 
@@ -46,9 +100,10 @@ input[type="number"] {
     background-color: #333;
     color: white;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -59,4 +114,17 @@ input[type="number"] {
 .result span:last-child {
     font-size: 20px;
     font-weight: bold;
+    margin-top: 10px;
+}
+
+.result--highlight {
+    background-color: #8000FF;
+}
+
+.result--highlight span:last-child {
+    color: #fff;
+}
+
+.result--highlight span:first-child {
+    color: #fff;
 }
