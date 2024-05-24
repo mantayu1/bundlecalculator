@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculate your earnings</h1>
+        <div class="input-group">
+            <label for="buyers">Number of Buyers</label>
+            <input type="range" id="buyers" name="buyers" min="0" max="100000" value="0" oninput="updateValue(this.value, 'buyers-output')">
+            <input type="number" id="buyers-output" min="0" max="100000" value="0" oninput="updateRange(this.value, 'buyers')">
+        </div>
+        <div class="input-group">
+            <label for="amount">Average Amount Invested</label>
+            <input type="range" id="amount" name="amount" min="0" max="10000" value="0" oninput="updateValue(this.value, 'amount-output')">
+            <input type="number" id="amount-output" min="0" max="10000" value="0" oninput="updateRange(this.value, 'amount')">
+        </div>
+        <div class="input-group">
+            <label for="signups">New Sign-ups</label>
+            <input type="range" id="signups" name="signups" min="0" max="100000" value="0" oninput="updateValue(this.value, 'signups-output')">
+            <input type="number" id="signups-output" min="0" max="100000" value="0" oninput="updateRange(this.value, 'signups')">
+        </div>
+        <div class="results">
+            <div class="result">
+                <span>Commission Earned</span>
+                <span id="commission">$0</span>
+            </div>
+            <div class="result">
+                <span>Total Sign-up Bonus</span>
+                <span id="bonus">$0</span>
+            </div>
+            <div class="result">
+                <span>Total Amount Earned</span>
+                <span id="total">$0</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
